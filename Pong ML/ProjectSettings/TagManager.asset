@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Left Paddle
+  - Right Paddle
+  - Top Wall
+  - Bottom Wall
   layers:
   - Default
   - TransparentFX

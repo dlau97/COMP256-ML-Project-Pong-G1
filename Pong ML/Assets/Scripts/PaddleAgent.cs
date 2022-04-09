@@ -12,12 +12,15 @@ public class PaddleAgent : Agent
     private Rigidbody rb;
     private Vector3 initialPos;
 
-    public Transform ballTarget;
+    public Transform ballTransform;
+    public Rigidbody ballRB;
+
+    public Transform opposingPaddle;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        initialPos = this.transform.position;
+        initialPos = this.transform.localPosition;
     }
 
     public override void OnEpisodeBegin()
@@ -26,8 +29,68 @@ public class PaddleAgent : Agent
         this.rb.angularVelocity = Vector3.zero;
         this.rb.velocity = Vector3.zero;
         this.transform.localPosition = initialPos;
+        ballTransform.gameObject.GetComponent<BallController>().ResetBall();
+
     }
-    
+
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        // Ball, Opposing Paddle and Agent positions
+        sensor.AddObservation(ballTransform.localPosition);
+        sensor.AddObservation(opposingPaddle.localPosition);
+        sensor.AddObservation(this.transform.localPosition);
+
+        //Ball velocity
+        sensor.AddObservation(rb.velocity.x);
+        sensor.AddObservation(rb.velocity.y);
+
+        // Agent velocity
+        sensor.AddObservation(rb.velocity.x);
+        sensor.AddObservation(rb.velocity.y);
+    }
+
+    public float paddleSpeedMultiplier = 10f;
+    public override void OnActionReceived(ActionBuffers actionBuffers)
+    {
+        // Actions, size = 2
+        Vector3 controlSignal = Vector3.zero;
+        controlSignal.y = actionBuffers.ContinuousActions[0];
+        rb.AddForce(controlSignal * paddleSpeedMultiplier);
+
+        //Constraints
+        if(this.transform.localPosition.y > 3.5f)
+        {
+            this.transform.localPosition = new Vector3(initialPos.x, 3.5f, 9.4f);
+        }
+        else if (this.transform.localPosition.y < -3.5f)
+        {
+            this.transform.localPosition = new Vector3(initialPos.x, -3.5f, 9.4f);
+        }
+
+        // Rewards
+
+        // Reached target
+        if (ballTransform.localPosition.x >= 9f)
+        {
+            SetReward(1.0f);
+            EndEpisode();
+        }
+
+        // Fell off platform
+        else if (ballTransform.localPosition.x <= -9f)
+        {
+            EndEpisode();
+        }
+    }
+
+    //Manual Controls
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        var continuousActionsOut = actionsOut.ContinuousActions;
+        continuousActionsOut[0] = Input.GetAxis("Vertical");
+    }
+
 
 
 }
