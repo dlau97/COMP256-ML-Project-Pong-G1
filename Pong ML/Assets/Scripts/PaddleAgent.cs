@@ -30,6 +30,7 @@ public class PaddleAgent : Agent
         this.rb.velocity = Vector3.zero;
         this.transform.localPosition = initialPos;
         ballTransform.gameObject.GetComponent<BallController>().ResetBall();
+        opposingPaddle.gameObject.GetComponent<PaddleAIController>().ResetPaddle();
 
     }
 
