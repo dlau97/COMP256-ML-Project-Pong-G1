@@ -50,22 +50,22 @@ public class PaddleAgent : Agent
         sensor.AddObservation(rb.velocity.y);
     }
 
-    public float paddleSpeedMultiplier = 10f;
+    public float paddleSpeedMultiplier = 5f;
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
         // Actions, size = 2
         Vector3 controlSignal = Vector3.zero;
-        controlSignal.y = actionBuffers.ContinuousActions[0];
-        rb.AddForce(controlSignal * paddleSpeedMultiplier);
+        controlSignal.y = actionBuffers.ContinuousActions[0] * paddleSpeedMultiplier;
+        rb.velocity = controlSignal;
 
         //Constraints
-        if(this.transform.localPosition.y > 3.5f)
+        if(this.transform.localPosition.y > 3.2f)
         {
-            this.transform.localPosition = new Vector3(initialPos.x, 3.5f, 9.4f);
+            this.transform.localPosition = new Vector3(initialPos.x, 3.2f, 9.5f);
         }
-        else if (this.transform.localPosition.y < -3.5f)
+        else if (this.transform.localPosition.y < -3.2f)
         {
-            this.transform.localPosition = new Vector3(initialPos.x, -3.5f, 9.4f);
+            this.transform.localPosition = new Vector3(initialPos.x, -3.2f, 9.5f);
         }
 
         // Rewards
