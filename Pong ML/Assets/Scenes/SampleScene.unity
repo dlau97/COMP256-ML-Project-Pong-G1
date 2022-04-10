@@ -819,6 +819,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7053852465481204798, guid: a8f635848624eb24fb164845ce797294, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7053852465673988828, guid: a8f635848624eb24fb164845ce797294, type: 3}
       propertyPath: m_Name
       value: Training Area

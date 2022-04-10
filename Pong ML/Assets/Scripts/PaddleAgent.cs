@@ -16,6 +16,7 @@ public class PaddleAgent : Agent
     public Rigidbody ballRB;
 
     public Transform opposingPaddle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,17 +72,24 @@ public class PaddleAgent : Agent
 
         // Rewards
 
-        // Reached target
+        // Scored Ball on opposite side
         if (ballTransform.localPosition.x >= 9f)
         {
             SetReward(1.0f);
             EndEpisode();
         }
 
-        // Fell off platform
+        // Let Ball pass though
         else if (ballTransform.localPosition.x <= -9f)
         {
             EndEpisode();
+        }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("Ball")){
+            //Debug.Log("Touched Ball");
+            AddReward(.2f);
         }
     }
 

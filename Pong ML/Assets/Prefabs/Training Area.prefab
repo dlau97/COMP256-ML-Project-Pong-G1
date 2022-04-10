@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballTransform: {fileID: 7053852465092442189}
-  followSpeed: 10
+  followSpeed: 5
 --- !u!1 &7053852464945316076
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 7053852465092442191}
   m_Layer: 0
   m_Name: Ball Target
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e2bff09a1325a4a9c7534203f32ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeedFactor: 12
+  ballSpeedFactor: 10
 --- !u!65 &7053852465092442191
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,0 +1,47 @@
+{
+    "PaddleBehaviour": {
+        "checkpoints": [
+            {
+                "steps": 499989,
+                "file_path": "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-499989.onnx",
+                "reward": 0.0,
+                "creation_time": 1649548777.4442143,
+                "auxillary_file_paths": [
+                    "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-499989.pt"
+                ]
+            },
+            {
+                "steps": 999942,
+                "file_path": "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-999942.onnx",
+                "reward": 0.5,
+                "creation_time": 1649549665.8405304,
+                "auxillary_file_paths": [
+                    "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-999942.pt"
+                ]
+            },
+            {
+                "steps": 1352631,
+                "file_path": "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-1352631.onnx",
+                "reward": 0.0,
+                "creation_time": 1649550373.3521903,
+                "auxillary_file_paths": [
+                    "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-1352631.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1352631,
+            "file_path": "results\\firstPongRun\\PaddleBehaviour.onnx",
+            "reward": 0.0,
+            "creation_time": 1649550373.3521903,
+            "auxillary_file_paths": [
+                "results\\firstPongRun\\PaddleBehaviour\\PaddleBehaviour-1352631.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0.dev0",
+        "torch_version": "1.11.0+cpu"
+    }
+}

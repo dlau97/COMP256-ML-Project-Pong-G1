@@ -8,6 +8,7 @@ TagManager:
   - Right Paddle
   - Top Wall
   - Bottom Wall
+  - Ball
   layers:
   - Default
   - TransparentFX
