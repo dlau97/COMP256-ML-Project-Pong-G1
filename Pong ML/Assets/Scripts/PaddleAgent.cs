@@ -17,6 +17,7 @@ public class PaddleAgent : Agent
 
     public Transform opposingPaddle;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,16 +41,16 @@ public class PaddleAgent : Agent
     {
         // Ball, Opposing Paddle and Agent positions
         sensor.AddObservation(ballTransform.localPosition);
-        sensor.AddObservation(opposingPaddle.localPosition);
+        // sensor.AddObservation(opposingPaddle.localPosition);
         sensor.AddObservation(this.transform.localPosition);
 
         //Ball velocity
-        sensor.AddObservation(rb.velocity.x);
-        sensor.AddObservation(rb.velocity.y);
+        // sensor.AddObservation(ballRB.velocity.x);
+        // sensor.AddObservation(ballRB.velocity.y);
 
         // Agent velocity
-        sensor.AddObservation(rb.velocity.x);
-        sensor.AddObservation(rb.velocity.y);
+        // sensor.AddObservation(rb.velocity.x);
+        // sensor.AddObservation(rb.velocity.y);
     }
 
     public float paddleSpeedMultiplier = 5f;
@@ -75,13 +76,14 @@ public class PaddleAgent : Agent
         // Scored Ball on opposite side
         if (ballTransform.localPosition.x >= 9f)
         {
-            SetReward(1.0f);
+            //SetReward(1.0f);
             EndEpisode();
         }
 
         // Let Ball pass though
         else if (ballTransform.localPosition.x <= -9f)
         {
+            SetReward(-1.0f);
             EndEpisode();
         }
     }
@@ -89,7 +91,8 @@ public class PaddleAgent : Agent
     void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Ball")){
             //Debug.Log("Touched Ball");
-            AddReward(.2f);
+            SetReward(1.0f);
+            EndEpisode();
         }
     }
 
