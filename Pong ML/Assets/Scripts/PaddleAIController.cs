@@ -17,7 +17,7 @@ public class PaddleAIController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        initialPos = this.transform.localPosition;
+        initialPos = new Vector3(8f, 0f, 9.5f);
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class PaddleAIController : MonoBehaviour
     public void ResetPaddle()
     {
         //Reset Paddle Velocity and Position
-        this.rb.angularVelocity = Vector3.zero;
+        //this.rb.angularVelocity = Vector3.zero;
         this.rb.velocity = Vector3.zero;
         this.transform.localPosition = initialPos;
     }

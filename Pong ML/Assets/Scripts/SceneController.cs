@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) && (activeScene == "AI Play Scene" || activeScene == "Player Play Scene")){
             LoadMenuScene();
         }
-        else if(activeScene == "Menu Scene"){
+        else if(Input.GetKeyDown(KeyCode.Escape) && activeScene == "Menu Scene"){
             QuitApplication();
         }
     }

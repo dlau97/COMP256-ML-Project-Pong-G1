@@ -24,13 +24,13 @@ public class PaddleAgent : Agent
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        initialPos = this.transform.localPosition;
+        initialPos = new Vector3(-8f, 0f, 9.5f);
     }
 
     public override void OnEpisodeBegin()
     {
         //Reset Paddle Velocity and Position
-        this.rb.angularVelocity = Vector3.zero;
+        //this.rb.angularVelocity = Vector3.zero;
         this.rb.velocity = Vector3.zero;
         this.transform.localPosition = initialPos;
         ballTransform.gameObject.GetComponent<BallController>().ResetBall();

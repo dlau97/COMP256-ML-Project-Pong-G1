@@ -12,8 +12,8 @@ public class BallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ballRB = GetComponent<Rigidbody>();
-        initialPos = this.transform.localPosition;
+        ballRB = this.GetComponent<Rigidbody>();
+        initialPos = new Vector3(0f, 0f, 9.5f);
         ResetBall();
         
     }
@@ -39,7 +39,7 @@ public class BallController : MonoBehaviour
         Vector3 newStartPos = initialPos;
         newStartPos.y += randomY; //Randomise start Y position
         this.transform.localPosition = newStartPos;
-        ballRB.angularVelocity = Vector3.zero;
+        //ballRB.angularVelocity = Vector3.zero;
         ballRB.velocity = Vector3.zero;
         RandomiseBallVelocity();
     }
