@@ -35,7 +35,10 @@ public class BallController : MonoBehaviour
 
     public void ResetBall()
     {
-        this.transform.localPosition = initialPos;
+        float randomY = (Random.Range(-3.5f, 3.5f));
+        Vector3 newStartPos = initialPos;
+        newStartPos.y += randomY; //Randomise start Y position
+        this.transform.localPosition = newStartPos;
         ballRB.angularVelocity = Vector3.zero;
         ballRB.velocity = Vector3.zero;
         RandomiseBallVelocity();

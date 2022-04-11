@@ -2,22 +2,58 @@
     "PaddleBehaviour": {
         "checkpoints": [
             {
-                "steps": 194259,
-                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-194259.onnx",
+                "steps": 999985,
+                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-999985.onnx",
                 "reward": null,
-                "creation_time": 1649616225.9000337,
+                "creation_time": 1649630405.1121118,
                 "auxillary_file_paths": [
-                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-194259.pt"
+                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-999985.pt"
+                ]
+            },
+            {
+                "steps": 1499986,
+                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-1499986.onnx",
+                "reward": null,
+                "creation_time": 1649631454.8627467,
+                "auxillary_file_paths": [
+                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-1499986.pt"
+                ]
+            },
+            {
+                "steps": 1999986,
+                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-1999986.onnx",
+                "reward": 0.5,
+                "creation_time": 1649632471.238514,
+                "auxillary_file_paths": [
+                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-1999986.pt"
+                ]
+            },
+            {
+                "steps": 2499993,
+                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-2499993.onnx",
+                "reward": null,
+                "creation_time": 1649633510.8613214,
+                "auxillary_file_paths": [
+                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-2499993.pt"
+                ]
+            },
+            {
+                "steps": 2500057,
+                "file_path": "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-2500057.onnx",
+                "reward": null,
+                "creation_time": 1649633510.9406812,
+                "auxillary_file_paths": [
+                    "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-2500057.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 194259,
+            "steps": 2500057,
             "file_path": "results\\thirdPongRun\\PaddleBehaviour.onnx",
             "reward": null,
-            "creation_time": 1649616225.9000337,
+            "creation_time": 1649633510.9406812,
             "auxillary_file_paths": [
-                "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-194259.pt"
+                "results\\thirdPongRun\\PaddleBehaviour\\PaddleBehaviour-2500057.pt"
             ]
         }
     },

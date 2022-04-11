@@ -17,6 +17,8 @@ public class PaddleAgent : Agent
 
     public Transform opposingPaddle;
 
+    public bool isTraining = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,7 @@ public class PaddleAgent : Agent
         // Ball, Opposing Paddle and Agent positions
         sensor.AddObservation(ballTransform.localPosition);
         // sensor.AddObservation(opposingPaddle.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
+        sensor.AddObservation(this.transform.localPosition.y);
 
         //Ball velocity
         // sensor.AddObservation(ballRB.velocity.x);
@@ -92,7 +94,10 @@ public class PaddleAgent : Agent
         if(other.gameObject.CompareTag("Ball")){
             //Debug.Log("Touched Ball");
             SetReward(1.0f);
-            EndEpisode();
+            if(isTraining==true){
+                EndEpisode();
+            }
+
         }
     }
 

@@ -36,7 +36,7 @@ behaviors:
     init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 2500000
+    max_steps: 1000000
     time_horizon: 64
     summary_freq: 10000
     threaded: false
@@ -62,7 +62,7 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: thirdPongRun
+  run_id: fourthPongRun
   initialize_from: null
   load_model: false
   resume: true
