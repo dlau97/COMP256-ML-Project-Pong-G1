@@ -9,7 +9,7 @@ using Unity.MLAgents.Actuators;
 public class PaddleAgent : Agent
 {
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector3 initialPos;
 
     public Transform ballTransform;

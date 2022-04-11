@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballTransform: {fileID: 7053852465092442189}
+  enableAI: 1
   followSpeed: 8
 --- !u!1 &7053852464945316076
 GameObject:
@@ -755,9 +756,11 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
+  rb: {fileID: 7053852465481204796}
   ballTransform: {fileID: 7053852465092442189}
   ballRB: {fileID: 7053852465092442190}
   opposingPaddle: {fileID: 7053852464358681337}
+  isTraining: 1
   paddleSpeedMultiplier: 20
 --- !u!114 &7053852465481204799
 MonoBehaviour:
